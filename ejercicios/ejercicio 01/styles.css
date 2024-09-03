@@ -1,0 +1,79 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+    background-color: #000;
+    font-family: Arial, sans-serif; /* Mejora la legibilidad */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw; /* Se asegura que main no sea más ancho que 90% del viewport */
+    max-width: 600px; /* Máximo ancho para evitar que sea demasiado grande en pantallas grandes */
+}
+
+form {
+    padding: clamp(12px, 2vw, 24px); /* Ajusta el padding entre 12px y 24px según el tamaño del viewport */
+    border-radius: clamp(8px, 1vw, 16px); /* Ajusta el border-radius entre 8px y 16px */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 2vw, 24px); /* Ajusta el espacio entre los elementos del formulario */
+    width: 100%;
+}
+
+input {
+    padding: clamp(8px, 1.5vw, 12px); /* Ajusta el padding del input */
+    font-size: clamp(14px, 2vw, 18px); /* Ajusta el tamaño de la fuente */
+    border: none;
+    background-color: antiquewhite;
+    border-radius: clamp(4px, 0.5vw, 8px); /* Ajusta el border-radius */
+    width: 100%; /* Asegura que el input ocupe todo el ancho del formulario */
+}
+
+button {
+    border: none;
+    padding: clamp(10px, 1.5vw, 16px); /* Ajusta el padding del botón */
+    background-color: blueviolet;
+    color: white;
+    font-size: clamp(16px, 2vw, 20px); /* Ajusta el tamaño de la fuente del botón */
+    border-radius: clamp(4px, 0.5vw, 8px); /* Ajusta el border-radius */
+    cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+button:hover {
+    background-color: darkviolet; /* Cambia el color del botón al pasar el ratón sobre él */
+}
+
+.results {
+    padding: clamp(8px, 1vw, 16px); /* Ajusta el padding del resultado */
+    background-color: aqua;
+    color: #000;
+    font-size: clamp(18px, 2.5vw, 25px); /* Ajusta el tamaño de la fuente del resultado */
+    font-weight: 500;
+    text-align: center; /* Centra el texto */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    form {
+        padding: clamp(8px, 2vw, 16px); /* Ajusta el padding en pantallas pequeñas */
+        gap: clamp(8px, 1.5vw, 16px); /* Ajusta el espacio entre los elementos */
+    }
+
+    input,
+    button {
+        font-size: clamp(14px, 2vw, 18px); /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    }
+}
