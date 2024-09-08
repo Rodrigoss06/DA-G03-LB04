@@ -5,13 +5,13 @@ function calcularPropina(cuenta, porcentaje) {
   return cuenta * porcentaje;
 }
 
-const form = document.getElementById("form");
+const form = document.querySelector("form");
 
-form.addEventListener("submit", (event)=> {
-  event.preventDefault();
+form.addEventListener("submit", (Event)=> {
+  Event.preventDefault();
   const formData = new FormData(form);
 
-  if (isNaN(cuenta) || isNaN(propina)) {
+  if (isNaN(formData.get("cuenta")) || isNaN(formData.get("propina"))) {
     console.error("Por favor, ingrese valores válidos para cuenta y propina.");
     return;
   }

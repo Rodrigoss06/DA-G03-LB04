@@ -1,9 +1,10 @@
 function convertirGrados(grados, opc) {
   if (opc == "aCelsius") {
-    return (grados * 9) / 5 + 32;
+    return ((grados - 32) * 5) / 9;
+    
   }
   if (opc == "aFahrenheit") {
-    return ((grados - 32) * 5) / 9;
+    return (grados * 9) / 5 + 32;
   }
   return 0;
 }

@@ -1,0 +1,93 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-image: url(assets/pattern.svg);
+    background-color: #000;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: clamp(40px, 4vw, 60px); /* El tamaño será al menos 40px, y crece hasta un máximo de 60px */
+    font-weight: 600;
+}
+
+form {
+    padding: 18px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+    color: #000;
+    gap: 10px;
+    width: clamp(400px, 40vw, 40vw);
+}
+
+#contentLength{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+#contentCheckbox {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+h2 {
+    font-size: clamp(18px, 2vw, 24px); /* El tamaño será al menos 18px, y crece hasta un máximo de 24px */
+    font-weight: 500;
+    margin: 0;
+}
+
+label {
+    font-size: clamp(14px, 1.5vw, 16px); /* El tamaño será al menos 14px, y crece hasta un máximo de 16px */
+}
+
+input[type="number"] {
+    padding: 8px;
+    padding-right: 0;
+    border-radius: 4px;
+    border: 1px solid #000;
+    width: 100%;
+    background-color: #fff;
+    font-size: clamp(15px, 2vw, 18px); /* El tamaño será al menos 15px, y crece hasta un máximo de 18px */
+    margin: 0;
+}
+
+.labelCheckbox {
+    display: flex;
+    align-items: center;
+}
+
+button[type="submit"] {
+    border-radius: 12px;
+    border: none;
+    padding: 8px 12px;
+    background-color: coral;
+    color: #fff;
+    width: 100%;
+    font-size: clamp(14px, 2vw, 18px); /* El tamaño será al menos 14px, y crece hasta un máximo de 18px */
+}
+
+#passwordOutput {
+    margin-top: 20px;
+    font-size: 1.5em;
+}

@@ -5,60 +5,77 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; /* Centra verticalmente */
-    background-color: #000;
-    font-family: Arial, sans-serif; /* Mejora la legibilidad */
+    background-color: #1a1a1a; /* Color de fondo más suave para menor contraste */
+    font-family: 'Arial', sans-serif; /* Mejora la legibilidad */
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90vw; /* Se asegura que main no sea más ancho que 90% del viewport */
-    max-width: 600px; /* Máximo ancho para evitar que sea demasiado grande en pantallas grandes */
+    width: clamp(350px, 40vw, 40vw); /* Se asegura que main no sea más ancho que 90% del viewport */
+    padding: 14px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #000;
 }
 
 form {
-    padding: clamp(12px, 2vw, 24px); /* Ajusta el padding entre 12px y 24px según el tamaño del viewport */
-    border-radius: clamp(8px, 1vw, 16px); /* Ajusta el border-radius entre 8px y 16px */
-    background-color: #fff;
+    padding: clamp(18px, 2vw, 24px); /* Ajusta el padding entre 18px y 24px */
+    gap: clamp(12px, 2vw, 24px); /* Ajusta el espacio entre los elementos del formulario */
+    width: 90%;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(12px, 2vw, 24px); /* Ajusta el espacio entre los elementos del formulario */
+    color: #000;
     width: 100%;
 }
 
 input {
-    padding: clamp(8px, 1.5vw, 12px); /* Ajusta el padding del input */
-    font-size: clamp(14px, 2vw, 18px); /* Ajusta el tamaño de la fuente */
-    border: none;
-    background-color: antiquewhite;
-    border-radius: clamp(4px, 0.5vw, 8px); /* Ajusta el border-radius */
-    width: 100%; /* Asegura que el input ocupe todo el ancho del formulario */
+    padding: clamp(10px, 1vw, 40px); /* Ajusta el padding del input */
+    font-size: clamp(16px, 1vw, 35px); /* Ajusta el tamaño de la fuente */
+    border-radius: 4px; 
+    width: 90%; /* Asegura que el input ocupe todo el ancho del formulario */
+    border: 1px solid #ccc; /* Color de borde más sutil */
+    background-color: #f9f9f9; /* Fondo del input más claro */
+    margin: 0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para dar profundidad */
 }
 
 button {
     border: none;
-    padding: clamp(10px, 1.5vw, 16px); /* Ajusta el padding del botón */
-    background-color: blueviolet;
+    padding: clamp(12px, 1.5vw, 16px); /* Ajusta el padding del botón */
+    background-color: #6a0dad;
     color: white;
     font-size: clamp(16px, 2vw, 20px); /* Ajusta el tamaño de la fuente del botón */
-    border-radius: clamp(4px, 0.5vw, 8px); /* Ajusta el border-radius */
-    cursor: pointer; /* Cambia el cursor para indicar que es clicable */
-    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+    border-radius: clamp(6px, 0.5vw, 10px); /* Ajusta el border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Añade transición suave para cambios de color y tamaño */
 }
 
 button:hover {
-    background-color: darkviolet; /* Cambia el color del botón al pasar el ratón sobre él */
+    background-color: #4b0082; /* Cambia el color del botón al pasar el ratón sobre él */
+    transform: scale(1.05); /* Hace que el botón crezca ligeramente al pasar el ratón */
+}
+
+button:focus {
+    outline: 2px solid #fff; /* Añade un enfoque visible al botón */
+    outline-offset: 2px;
 }
 
 .results {
     padding: clamp(8px, 1vw, 16px); /* Ajusta el padding del resultado */
-    background-color: aqua;
+    background-color: #00ced1;
     color: #000;
     font-size: clamp(18px, 2.5vw, 25px); /* Ajusta el tamaño de la fuente del resultado */
     font-weight: 500;
-    text-align: center; /* Centra el texto */
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px; /* Añade espacio entre el formulario y los resultados */
 }
 
 .hidden {
@@ -68,12 +85,19 @@ button:hover {
 /* Media Queries */
 @media (max-width: 600px) {
     form {
-        padding: clamp(8px, 2vw, 16px); /* Ajusta el padding en pantallas pequeñas */
+        padding: clamp(10px, 2vw, 16px); /* Ajusta el padding en pantallas pequeñas */
         gap: clamp(8px, 1.5vw, 16px); /* Ajusta el espacio entre los elementos */
     }
 
-    input,
-    button {
-        font-size: clamp(14px, 2vw, 18px); /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    input, button {
+        font-size: clamp(14px, 2vw, 16px); /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .results {
+        font-size: clamp(16px, 2vw, 20px); /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
